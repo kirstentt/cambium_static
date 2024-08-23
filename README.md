@@ -1,6 +1,8 @@
 # cambium_static
 code for modeling patterning of the Arabidopsis thaliana cambium tissue responsible for secondary growth
 
+please make sure to use the latest version: cambium_v2.tar.gz
+
 General
 
 Compiling
