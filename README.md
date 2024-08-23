@@ -60,5 +60,13 @@ To control the level of TDIF added to all cambium cells (done in figure 4B,F) ch
 
 To vary diffusion rate of TDIF or ANT/PLT (varied in Fig S ….) change the value of CLE41diff or pltsdiff, respectively in include/Param_config.hh
 
+Alternative multicellular code 
+
+An alternatively, but similar working, multicellular code is provided in the directory multicellular_homogeneousTDIFdiffusion
+
+In this code, instead of only implementing diffusion of TDIF in the cell walls separating the cells in 2D, we implemented homogeneous diffusion across the simulated 2D tissue, so in both the cell walls “overlaying” the simulated 2D cells and those separating them in 2D. 
+
+Note that if the diffusion coefficient is the same as in the original code, diffusion is too slow and no effective gradient reaching PXY receptors is formed. This is caused by the fact that in the original code effectively there is infinitely rapid diffusion in cell walls “overlaying” the cells and finite diffusion in the cell walls separating the cells in the 2D plane. It can be shown through a homogenesation approach that, given the used sizes of cells and walls, therefore effective diffusion is approximately 23 times higher than suggested by the value of the diffusion coefficient. Therefore to achieve similar results a 23-fold increase in diffusion coefficient is necessary in this alternative code.
+
 In the multicellular simulations output is generated in terms of png files depicting the levels of auxin, HDZIPIII, TDIF free, PXY free, TDIF-PXY complex, ANT and PLT every so many timesteps. In addition to separate png files per model variable also a combined PNG file is created.
 Additionally flat text files are generated per model cell, storing variable dynamics as a function of time for that cell. This output can be easily visualized with programs like Xmgrace, gnuplot, excel etc.
